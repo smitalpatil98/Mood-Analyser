@@ -6,6 +6,8 @@ class MoodAnalyzerTest
     @Test
     void analyzeMood()
     {
-        System.out.println("Welcome to Mood analyzer");
+        MoodAnalyzer moodAnalyzer1 = new MoodAnalyzer();
+        String mood = moodAnalyzer1.analyzemood("I am in Sad mood".toLowerCase());
+        Assertions.assertEquals(mood,"SAD");
     }
 }
