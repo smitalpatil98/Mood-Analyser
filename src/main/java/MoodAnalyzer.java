@@ -18,13 +18,15 @@ public class MoodAnalyzer
             if (msg.contains("sad"))
             {
                 return "SAD";
-            } else {
+            }
+            else
+            {
                 return "HAPPY";
             }
         }
         catch (NullPointerException e)
         {
-            return "INVALID";
+            return "HAPPY";
         }
     }
 }
