@@ -2,6 +2,7 @@
 public class MoodAnalyzer
 {
     private String msg;
+
     //Zero argument constructor
     public MoodAnalyzer()
     {
@@ -11,15 +12,20 @@ public class MoodAnalyzer
     {
         this.msg = msg;
     }
-    public String analyzemood(String msg)
-    {
-        if(msg.contains("sad")){
-            return "SAD";
-        }
-        else
+    public String analyzemood() {
+        try
         {
-            return "HAPPY";
+            if (msg.contains("sad"))
+            {
+                return "SAD";
+            } else {
+                return "HAPPY";
+            }
+        }
+        catch (NullPointerException e)
+        {
+            return "INVALID";
         }
     }
-    }
+}
 
