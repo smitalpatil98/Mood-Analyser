@@ -1,33 +1,35 @@
 
-public class MoodAnalyzer
-{
+public class MoodAnalyzer extends Throwable {
     private String msg;
-
-    //Zero argument constructor
-    public MoodAnalyzer()
-    {
-    }
     //Parameterized Constructor
     public MoodAnalyzer(String msg)
     {
         this.msg = msg;
     }
+    public String validate() throws MoodAnalyzer{
+        if(msg.contains("null")){
+            return "Null";
+        }else if(msg.toLowerCase().contains("sad")) {
+            return "SAD";
+        }else if(msg.toLowerCase().contains("happy")) {
+            return "HAPPY";
+        }else{
+            throw new MoodAnalyzer("Invalid");
+        }
+    }
     public String analyzemood() {
         try
         {
-            if (msg.contains("sad"))
-            {
-                return "SAD";
-            }
-            else
-            {
-                return "HAPPY";
-            }
+
+                return validate();
+
         }
-        catch (NullPointerException e)
+        catch (MoodAnalyzer e)
         {
-            return "HAPPY";
+            System.out.println("Exception " + e);
+            System.out.println("catch the exception");
         }
+        return msg;
     }
 }
 
