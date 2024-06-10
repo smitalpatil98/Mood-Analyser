@@ -1,5 +1,8 @@
 
 public class MoodAnalyzer extends Throwable {
+    enum Mood{
+        HAPPY,SAD,NULL,EMPTY
+    }
     private String msg;
     //Parameterized Constructor
     public MoodAnalyzer(String msg)
@@ -13,6 +16,8 @@ public class MoodAnalyzer extends Throwable {
             return "SAD";
         }else if(msg.toLowerCase().contains("happy")) {
             return "HAPPY";
+        }else if(msg=="") {
+                return String.valueOf(Mood.EMPTY);
         }else{
             throw new MoodAnalyzer("Invalid");
         }

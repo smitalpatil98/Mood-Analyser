@@ -25,4 +25,11 @@ class MoodAnalyzerTest extends Throwable
         String mood = moodAnalyzer3.analyzemood();
         Assertions.assertEquals(mood,"Null");
     }
+    @Test
+    void analyzeEmptyInvalidMood() throws MoodAnalyzerTest
+    {
+        MoodAnalyzer moodAnalyzer4 = new MoodAnalyzer("");
+        String mood = moodAnalyzer4.analyzemood();
+        Assertions.assertEquals(mood,"EMPTY");
+}
 }
